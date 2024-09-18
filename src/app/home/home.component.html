@@ -1,0 +1,20 @@
+<h1 class="title">Connect 4</h1>
+<main class="main-home-container">
+  <form class="form-grid">
+    <div class="p1-input">
+      <label>Player 1</label>
+      <input type="text" #p1 title="Player 1 Name" />
+    </div>
+
+    <div class="p2-input">
+      <label>Player 2</label>
+      <input type="text" #p2 title="Player 2 Name" />
+    </div>
+  </form>
+  <button class="play-button" (click)="play(p1.value, p2.value)" type="submit">
+    Play
+  </button>
+</main>
+<div class="app-container">
+  <app-theme-toggle></app-theme-toggle>
+</div>

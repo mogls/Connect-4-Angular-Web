@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="board">
+    <div
+      class="column"
+      [ngClass]="{ highlight: hoveredIndex === colIndex }"
+      *ngFor="let col of this.boardState.flipGameBoard(); let colIndex = index"
+      id="{{ colIndex }}"
+    >
+      <div
+        class="row"
+        *ngFor="let num of col; let index = index"
+        id="{{ index }}"
+      >
+        <app-piece [player]="num"></app-piece>
+      </div>
+      <button
+        class="set-button"
+        [disabled]="this.pieceBeingPlaced"
+        (click)="placePiece(colIndex)"
+        (mouseenter)="hoveredIndex = colIndex"
+        (mouseleave)="hoveredIndex = null"
+      >
+        Set
+      </button>
+    </div>
+  </div>
+  <div class="current-player">
+    <p class="p{{ this.gameState.currentPlayer }}">Current player:</p>
+    <app-piece [player]="this.gameState.currentPlayer"></app-piece>
+  </div>
+</div>
+
+<button (click)="return()">Return</button>

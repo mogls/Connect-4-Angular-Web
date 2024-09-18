@@ -1,0 +1,16 @@
+.p1 {
+    color: red !important;
+    fill: red !important;
+}
+
+.p2 {
+    color: blue !important;
+    fill: blue !important;
+}
+
+@media (preferes-color-scheme: dark) {
+    .dark-circle {
+        color: #ddd;
+        fill: #ddd;
+    }
+}
